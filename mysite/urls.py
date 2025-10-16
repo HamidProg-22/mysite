@@ -19,6 +19,10 @@ from django.urls import path, include
 # from mysite.views import http_test # or from .views import http_test
 # from .views import json_test
 
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('http-test', http_test),
@@ -26,3 +30,6 @@ urlpatterns = [
     # path('website/', include('website.urls')),
     path('', include('website.urls')),
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
