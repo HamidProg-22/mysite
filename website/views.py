@@ -26,6 +26,8 @@ def contact_view(request):
     # return HttpResponse('<h1>Contact Page</h1>')
     return render(request, 'website/contact.html')
 
+
+
+# for test 
 def test_view(request):
-    
     return render(request, 'website/test.html', {'name': 'Hamid', 'lastname': 'Raeisi'})
