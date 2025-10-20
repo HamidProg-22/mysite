@@ -17,6 +17,11 @@ class Post(models.Model):
     updated_date = models.DateTimeField(auto_now=True)
     
 
+
+    class Meta:
+        ordering = ['-created_date']
+        # verbose_name = 'پست'
+        # verbose_name_plural = 'پست ها'
     # str function for show on ORm database
     def __str__(self):
         # return self.title

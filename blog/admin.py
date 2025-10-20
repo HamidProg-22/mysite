@@ -11,7 +11,7 @@ class PostAdmin(admin.ModelAdmin):
     # fields = ('title', )
     list_display = ('title', 'counted_views', 'status', 'published_date','created_date')
     list_filter = ('status', )
-    ordering = ['-created_date']  # - is ordered by dec
+    # ordering = ['-created_date']  # - is ordered by dec
     search_fields = ['title']
 
 
