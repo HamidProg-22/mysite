@@ -9,7 +9,10 @@ def blog_view(request):
     return render(request, 'blog/blog-home.html', context)
 
 def blog_single(request, pid):
-    post = get_object_or_404(Post, pk=pid)
+    # post = get_object_or_404(Post, pk=pid)
+    # post = get_object_or_404(Post, pk=pid, status=1)   # security -> conterol access- 1
+    posts = Post.objects.filter(status=1)
+    post = get_object_or_404(posts, pk=pid)
     context = {'post':post}
     return render(request, 'blog/blog-single.html', context)
 
