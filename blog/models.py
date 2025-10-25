@@ -1,11 +1,12 @@
 from django.db import models
-from django.contrib.auth. models import User
+from django.contrib.auth.models import User
 
 # Create your models here.
 
 # Create table Post for blog page and for add a post to blog
 class Post(models.Model):
     # image 
+    image = models.ImageField(upload_to='blog/', default='blog/default.jpg')
     # author
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=255)
