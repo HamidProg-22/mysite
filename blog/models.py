@@ -42,6 +42,10 @@ class Post(models.Model):
         # return self.title
         return "{}-{}".format(self.title, self.id)
 
+    def snippets(self):
+        # return 'this is snippets'
+        return self.content[:100] + '...'
+
     
     
                                                                 
