@@ -1,14 +1,4 @@
-{% load blog_tags %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hi, page test</h1>
-    <!-- <br>
+ <!-- <br>
     {{posts}}
 
     {% for post in posts %}
@@ -36,8 +26,15 @@
     <!-- {{pid}} -->
 
    <!-- <p> {{post.title}}</p> -->
-    <p>test: {% hello %}</p>
+ 
+ <p>test: {% hello %}</p>
 
+    <p>test: {% plustwo 6 %}</p>
+    <p>test: {% plustwo %}</p>
+    <p>{% totalpost as tp %}</p>
+    <p>{{tp}}</p>
 
-</body>
-</html>
+    <p>test: {% posts as totalposts %}</p>
+    {% for post in totalposts %}
+        <p>{{post.content|snippet:100}}</p>   
+    {% endfor %}

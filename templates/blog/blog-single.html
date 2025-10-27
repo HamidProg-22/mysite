@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load blog_tags %}
 {% block content %}
 <!-- start banner Area -->
 <section class="relative about-banner">
@@ -251,7 +252,7 @@
 						</p>
 					</div> -->
 					{% include 'blog/blog-writer.html' %}
-					<div class="single-sidebar-widget popular-post-widget">
+					<!-- <div class="single-sidebar-widget popular-post-widget">
 						<h4 class="popular-title">Popular Posts</h4>
 						<div class="popular-post-list">
 							<div class="single-post-list d-flex flex-row align-items-center">
@@ -299,10 +300,12 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<!-- <div class="single-sidebar-widget ads-widget">
 						<a href="#"><img class="img-fluid" src="{% static 'img/blog/ads-banner.jpg' %}" alt=""></a>
 					</div> -->
+					{% latestposts %}
+					
 					{% include 'blog/blog-ads.html' %}
 					<div class="single-sidebar-widget post-category-widget">
 						<h4 class="category-title">Post Catgories</h4>
