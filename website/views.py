@@ -1,33 +1,39 @@
 from django.shortcuts import render
+from django.http import HttpResponse, JsonResponse
+from website.models import Contact
 
 # Create your views here.
 
-# this is way not Standard for create a file, after repair 
-# from django.http import HttpResponse, JsonResponse
-from django.http import HttpResponse
 
-# def http_test(request):
-#     # return HttpResponse('Welcome, Hamid')
-#     return HttpResponse('<h1>Welcome, Hamid to my project</h1>')
-
-# def json_test(request):
-#     return JsonResponse({'name': 'Hamid', 'family': 'Raeisi'})
 
 
 def index_view(request):
-    # return HttpResponse('<h1>Home Page</h1>')
     return render(request, 'website/index.html')
 
 def about_view(request):
-    # return HttpResponse('<h1>About Page</h1>')
     return render(request, 'website/about.html')
 
 def contact_view(request):
-    # return HttpResponse('<h1>Contact Page</h1>')
     return render(request, 'website/contact.html')
 
 
 
 # for test 
 def test_view(request):
-    return render(request, 'website/test.html', {'name': 'Hamid', 'lastname': 'Raeisi'})
+    if request.method == 'POST':
+        # print(request.POST)
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        c = Contact()
+        c.name = name
+        c.email = email
+        c.subject = subject
+        c.message = message
+        c.save()
+        
+    elif request.method == 'GET':
+        print(request.GET)
+    return render(request, 'test.html', {})
+    

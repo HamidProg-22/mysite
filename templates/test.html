@@ -9,9 +9,20 @@
 <body>
     <h1>Hi, page test</h1>
       
-    <p>test: </p>
-    <p>{% popularposts %}</p>
-    
+    <br>
+    <form action="{% url 'website:test' %}", method="post">
+        {% csrf_token %}
+        <label>name:</label>
+        <input type="text" name="name"><br>
+        <label>email:</label>
+        <input type="text" name="email"><br>
+        <label>subject:</label>
+        <input type="text" name="subject"><br>
+        <label>message:</label>
+        <input type="text" name="message"><br>
+        <button type="submit">submit</button>
+
+    </form>
 
 
 
