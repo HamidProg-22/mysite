@@ -21,12 +21,19 @@ def contact_view(request):
 # for test 
 def test_view(request):
     if request.method == 'POST':
+        # print(request.POST)
         name = request.POST.get('name')
         email = request.POST.get('email')
         subject = request.POST.get('subject')
         message = request.POST.get('message')
-        print(name, email, subject, message)
+        c = Contact()
+        c.name = name
+        c.email = email
+        c.subject = subject
+        c.message = message
+        c.save()
         
-    form = NameForm()
-    return render(request, 'test.html', {'form': form})
+    elif request.method == 'GET':
+        print(request.GET)
+    return render(request, 'test.html', {})
     
