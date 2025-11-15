@@ -13,7 +13,7 @@
     <form action="{% url 'website:test' %}", method="post">
         {% csrf_token %}
         
-        {{ form }}<br>
+        {{ form.as_p }}<br>
         <button type="submit">submit</button>
     </form>
 

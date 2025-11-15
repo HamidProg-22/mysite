@@ -6,7 +6,6 @@ from website.forms import NameForm
 
 
 
-
 def index_view(request):
     return render(request, 'website/index.html')
 
@@ -21,12 +20,17 @@ def contact_view(request):
 # for test 
 def test_view(request):
     if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        subject = request.POST.get('subject')
-        message = request.POST.get('message')
-        print(name, email, subject, message)
-        
+       form = NameForm(request.POST)
+       if form .is_valid():
+           name = form.cleaned_data['name']
+           email = form.cleaned_data['email']
+           subject = form.cleaned_data['subject']
+           message = form.cleaned_data['message']
+           print(name, email, subject, message)
+           return HttpResponse("Done.")
+       else:
+           return HttpResponse("Invalid data.")
+                   
     form = NameForm()
     return render(request, 'test.html', {'form': form})
     
