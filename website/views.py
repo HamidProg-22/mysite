@@ -25,6 +25,7 @@ def contact_view(request):
     form = ContactForm()
     return render(request, 'website/contact.html', {'form': form})
 
+
 def newslatter_view(request):
     if request.method == 'POST':
         form = NewsLatterForm(request.POST)
@@ -33,6 +34,8 @@ def newslatter_view(request):
             return HttpResponseRedirect('/')
         else:
             return HttpResponseRedirect('/')
+
+
 
 # for test 
 def test_view(request):
