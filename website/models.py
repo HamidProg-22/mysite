@@ -19,3 +19,10 @@ class Contact(models.Model):
         # return super().__str__()
         return self.name
     
+class NewsLatter(models.Model):
+    email = models.EmailField()
+    
+   
+
+    def __str__(self):
+        return self.email

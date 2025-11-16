@@ -1,5 +1,5 @@
 from django import forms
-from website.models import Contact
+from website.models import Contact, NewsLatter
 
 class NameForm(forms.Form):
     name = forms.CharField(label='Your name', max_length=100)
@@ -14,4 +14,9 @@ class ContactForm(forms.ModelForm):
         model = Contact
         fields = '__all__'
         
+
+class NewsLatterForm(forms.ModelForm):
     
+    class Meta:
+        model = NewsLatter
+        fields = '__all__'
