@@ -35,9 +35,7 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-created_date']
-        # verbose_name = 'پست'
-        # verbose_name_plural = 'پست ها'
-    # str function for show on ORm database
+
     def __str__(self):
         # return self.title
         return "{}-{}".format(self.title, self.id)
@@ -45,7 +43,27 @@ class Post(models.Model):
     def snippets(self):
         # return 'this is snippets'
         return self.content[:100] + '...'
+    
+    def get_absolute_url(self):
+        return reverse('blog:single', kwargs={'pid':self.id})
 
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+    approved = models.BooleanField(default=False)
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
+    
+    
+    class Meta:
+        ordering = ['-created_date']
+    
+    def __str__(self):
+        return self.name
     
     
                                                                 

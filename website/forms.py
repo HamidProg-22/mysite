@@ -1,5 +1,6 @@
 from django import forms
 from website.models import Contact, NewsLatter
+from captcha.fields import CaptchaField
 
 class NameForm(forms.Form):
     name = forms.CharField(label='Your name', max_length=100)
@@ -9,7 +10,7 @@ class NameForm(forms.Form):
     
 
 class ContactForm(forms.ModelForm):
-    
+    captcha = CaptchaField()
     class Meta:
         model = Contact
         fields = '__all__'

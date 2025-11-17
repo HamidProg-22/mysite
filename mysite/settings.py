@@ -31,16 +31,28 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    
+    'multi_captcha_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.humanize',
     'django.contrib.staticfiles',
     'website.apps.WebsiteConfig',   # or 'website'
      'blog',    # 'blog.apps.BlogConfig',
-     'django_summernote',
+     'django_summernote',   # editor
+     'captcha',
 ]
+
+
+# Captcha admin settings:
+MULTI_CAPTCHA_ADMIN = {
+    # 'engine': 'recaptcha2',
+    'engine': 'simple-captcha',
+    
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -135,10 +147,8 @@ SUMMERNOTE_THEME = 'bs4'
 SUMMERNOTE_CONFIG = {
     'iframe' : True,
     # iframe = False,
-    
     'summernote': {
         'airMode': False,
-   
         'width': '100%',
         'height': "480",       
         'toolbar': [
