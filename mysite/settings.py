@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.humanize',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'django_extensions',
     'django.contrib.staticfiles',
     'website.apps.WebsiteConfig',   # or 'website'
      'blog',    # 'blog.apps.BlogConfig',
@@ -136,7 +139,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
 # site frame
-SITE_ID = 2
+# SITE_ID = 2
+SITE_ID = 3
 
 # robots
 ROBOTS_USE_HOST = True

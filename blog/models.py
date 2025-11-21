@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # Create your models here.
 
@@ -63,7 +64,17 @@ class Comment(models.Model):
         ordering = ['-created_date']
     
     def __str__(self):
-        return self.name
+        return self.title
     
+    def snippets(self):
+        return self.content[:100] + '...'
+    
+    
+    
+    # solution 1 for sitemap
+    def get_absolute_url(self):
+        return reverse('blog:single', kwargs={'pid': self.id})
+  
+   
     
                                                                 
