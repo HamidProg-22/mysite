@@ -44,10 +44,12 @@ INSTALLED_APPS = [
     'robots',
     'django_extensions',
     'django.contrib.staticfiles',
-    'website.apps.WebsiteConfig',   # or 'website'
-     'blog',    # 'blog.apps.BlogConfig',
-     'django_summernote',   # editor
-     'captcha',
+    'website.apps.WebsiteConfig',
+    'debug_toolbar',     # after of staticfiles
+    'taggit',
+    'blog',    # 'blog.apps.BlogConfig',
+    'django_summernote',   # editor
+    'captcha',
 ]
 
 
@@ -66,6 +68,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -139,7 +142,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
-# site frame
+# site framework
 # SITE_ID = 2
 SITE_ID = 3
 

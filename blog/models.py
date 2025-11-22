@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
-
+from taggit.managers import TaggableManager
 # Create your models here.
 
 # Create table Post for blog page and for add a post to blog
@@ -22,6 +22,7 @@ class Post(models.Model):
     # content
     content = models.TextField()
     # tag
+    tags = TaggableManager()
 
     # category
     category = models.ManyToManyField(Category)
