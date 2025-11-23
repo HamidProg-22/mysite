@@ -41,11 +41,11 @@
                     <div class="col-lg-6 col-sm-6 col-6 header-top-left">
                         <ul>
                             {% if request.user.is_authenticated %}
-                            <li><a href=""><p>Logged in as {{ request.user.username }}</p></a></li>
+                            <li><a href="#">Logged in as {{ request.user.username }}</a></li>
+                            <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
                             {% else %}
                             <li><a href="{% url 'accounts:login' %}">Login</a></li>
-                            <li><a href="#">Signup </a></li>
-
+                            <li><a href="#">Signup</a></li>
                             {% endif %}
                         </ul>
                     </div>
@@ -72,7 +72,7 @@
                         <li class="menu-has-children"><a href="{% url 'blog:index' %}">Blog</a>
                             
                         </li>
-                        <li class="menu-has-children"><a href="">Pages</a>
+                        <!-- <li class="menu-has-children"><a href="">Pages</a>
                             <ul>
                                 <li><a href="elements.html">Elements</a></li>
                                 <li class="menu-has-children"><a href="">Level 2 </a>
@@ -82,7 +82,7 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li><a href="{% url 'website:contact' %}">Contact</a></li>
                     </ul>
                 </nav><!-- #nav-menu-container -->

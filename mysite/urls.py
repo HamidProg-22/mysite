@@ -35,9 +35,6 @@ sitemaps = {
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('http-test', http_test),
-    # path('json-test', json_test)
-    # path('website/', include('website.urls')),
     path('', include('website.urls')),
     path('blog/', include('blog.urls')),
     path('summernote/', include('django_summernote.urls')),
