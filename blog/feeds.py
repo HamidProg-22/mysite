@@ -3,7 +3,7 @@ from django.urls import reverse
 from blog.models import Post
 
 class LatestEntriesFeed(Feed):
-    title = "blog newst posts"
+    title = "blog newset posts"
     link = "/rss/feed"
     description = "best blog ever"
 
@@ -14,5 +14,5 @@ class LatestEntriesFeed(Feed):
         return item.title
 
     def item_description(self, item):
-        return item.content
+        return item.content[:100]
 

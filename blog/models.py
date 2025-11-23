@@ -22,7 +22,7 @@ class Post(models.Model):
     # content
     content = models.TextField()
     # tag
-    tags = TaggableManager()
+    tags = TaggableManager()    # taggit-madule
 
     # category
     category = models.ManyToManyField(Category)

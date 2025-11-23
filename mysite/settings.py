@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'blog',    # 'blog.apps.BlogConfig',
     'django_summernote',   # editor
     'captcha',
+    'accounts',
 ]
 
 
