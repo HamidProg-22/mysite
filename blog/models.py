@@ -14,7 +14,6 @@ class Category(models.Model):
 class Post(models.Model):
     # image 
     image = models.ImageField(upload_to='blog/', default='blog/default.jpg')
-
     # author
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     # title
@@ -23,7 +22,6 @@ class Post(models.Model):
     content = models.TextField()
     # tag
     tags = TaggableManager()    # taggit-madule
-
     # category
     category = models.ManyToManyField(Category)
     

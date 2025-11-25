@@ -15,10 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-# the follow codes is generate by me
-# from mysite.views import http_test # or from .views import http_test
-# from .views import json_test
-
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
@@ -32,6 +28,7 @@ sitemaps = {
     'static': StaticViewSitemap,
     'blog': BlogSitemap,
 }
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -13,6 +13,4 @@ urlpatterns = [
     # registration / sigup
     path('signup', views.signup_view, name='signup'),
     
-    
-    
 ]
