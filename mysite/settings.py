@@ -32,25 +32,25 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     
-    'multi_captcha_admin',
-    'django.contrib.admin',
-    'django.contrib.auth',
+    'multi_captcha_admin',   # Me For use captcha in Admin Page
+    'django.contrib.admin',  # For uese admin page(db)
+    'django.contrib.auth',   # For use User in accounts App
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.humanize',
+    'django.contrib.messages',   # Me
+    'django.contrib.humanize',   # Me
     'django.contrib.sites',
-    'django.contrib.sitemaps',
-    'robots',
-    'django_extensions',
+    'django.contrib.sitemaps',   # Me
+    'robots',                    # Me
+    'django_extensions',         # Me
     'django.contrib.staticfiles',
     'website.apps.WebsiteConfig',
-    'debug_toolbar',     # after of staticfiles
-    'taggit',
-    'blog',    # 'blog.apps.BlogConfig',
-    'django_summernote',   # editor
-    'captcha',
-    'accounts',
+    'debug_toolbar',        # after of staticfiles
+    'taggit',               # Me: For Tage Section(blog-single)
+    'blog',                 # Me: App: Blog -> 'blog.apps.BlogConfig',
+    'django_summernote',    # Me: Editor For management sections Comments in Admin Page
+    'captcha',              # Me: For Use Captcha
+    'accounts',             # Me: App: Users
 ]
 
 
@@ -65,14 +65,14 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',        # Me: For use csrf_tokens
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
-ROOT_URLCONF = 'mysite.urls'
+ROOT_URLCONF = 'mysite.urls'         # Url Asli Project(mysite/urls.py)
 
 TEMPLATES = [
     {
